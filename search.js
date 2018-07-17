@@ -11,8 +11,10 @@ var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrT
          $(".Aroo").append(`
          <button id=newbutton[i] value=button>${topics[i]}</button>`);
 
-         $("#friends").prepend(`<div>${response.Title}</div><div>${response.images_still}</div>
-         <div>${response.rating}</div>`);
+         $("#friends").prepend(`
+         <div>${response.data[i].rating}</div><div>${response.images_still}</div>
+         <div>${response.rating}</div>
+         `);
        });
 };
 
