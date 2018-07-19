@@ -1,21 +1,29 @@
 var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Share Bear"];
+
 for (let i = 0; i < topics.length; i++) 
 {
  var topic1= topics[i];
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrTZ3Q2K4kJdihkX&q=" + topic1 + "&limit=10&offset=0&rating=G&lang=en";
+ var button1=topics[i];
+ var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrTZ3Q2K4kJdihkX&q=" + topic1 + "&limit=10&offset=0&lang=en";
     $.ajax({
        url: queryURL,
         method: "GET"
        }).then(function(response) {
          console.log(response);
+        //  var newbutton= document.getElementsByClassName('Aroo')+i;
          $(".Aroo").append(`
-         <button id=newbutton[i] value=button>${topics[i]}</button>`);
-
+         <button id=button1 value=button>${topics[i]}
+         </button>`);
+        $("#button1").on("click", function () 
+      {
+                 
          $("#friends").prepend(`
-         <div>${response.data[i].rating}</div><div>${response.images_still}</div>
-         <div>${response.rating}</div>
+         <div>${response.data[i].title}</div>
+         <div>${response.data[i].images.fixed_width_still.url}</div>
+         <div>${response.data[i].rating}</div>
          `);
        });
+      });
 };
 
        
