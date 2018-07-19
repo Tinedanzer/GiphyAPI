@@ -4,7 +4,7 @@ for (let i = 0; i < topics.length; i++)
 {
  var topic1= topics[i];
  
- var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrTZ3Q2K4kJdihkX&q=" + topic1 + "&limit=10&offset=0&lang=en";
+ var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrTZ3Q2K4kJdihkX&q=" + topic1 + "&limit=10&offset=0&lang=en";
     $.ajax({
        url: queryURL,
         method: "GET"
