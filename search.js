@@ -1,4 +1,4 @@
-var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Share Bear"];
+var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Tenderheart Bear"];
 
 for (let i = 0; i < topics.length; i++) 
 {
