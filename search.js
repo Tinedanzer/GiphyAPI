@@ -4,7 +4,7 @@ for (let i = 0; i < topics.length; i++)
 {
  var topic1= topics[i];
  
- var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrTZ3Q2K4kJdihkX&q=" + topic1 + "&limit=10&offset=0&lang=en";
+ var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=ru1FqB2awevSCsIvdrTZ3Q2K4kJdihkX&q=" + topics[i] + "&limit=10&offset=0&lang=en";
     $.ajax({
        url: queryURL,
         method: "GET"
@@ -12,10 +12,10 @@ for (let i = 0; i < topics.length; i++)
          console.log(response);
         //  var newbutton= document.getElementsByClassName('Aroo')+i;
          $(".Aroo").append(`
-         <button id=button1 value=button>${topics[i]}
+         <button id=button${topics[i]} value=button>${topics[i]}
          </button>`);
         //  $(".Aroo").attr(id, buttoni);
-        $("#button1").on("click", function () 
+        $("button").on("click", function () 
       {
                  
          $("#friends").prepend(`
