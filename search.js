@@ -14,18 +14,19 @@ for (let i = 0; i < topics.length; i++)
          $(".Aroo").append(`
          <button id=button1 value=button>${topics[i]}
          </button>`);
+        //  $(".Aroo").attr(id, buttoni);
         $("#button1").on("click", function () 
       {
                  
          $("#friends").prepend(`
          <div>${response.data[i].title}</div>
-         <div>${response.data[i].images.fixed_width_still.url}</div>
+         <div><img src="${response.data[i].images.fixed_width_still.url}"></div>
          <div>${response.data[i].rating}</div>
          `);
        });
       });
 };
 
-       
+
    
         
