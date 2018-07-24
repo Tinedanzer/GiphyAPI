@@ -1,5 +1,4 @@
-$(document).ready(function()
-{
+
 var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Tenderheart Bear"];
 
 // for (let i = 0; i < topics.length; i++) 
@@ -16,8 +15,11 @@ var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Tenderhear
          var newbutton= $("<button>");
          newbutton.attr('id', `button${index}`);
          newbutton.text(item);
-        var traits= $('<img>');
+        var traits= $('<img/>');
         traits.attr('src', response.data[index].images.fixed_width_still.url);
+        traits.attr('data-still', response.data[index].images.fixed_width_still.url);
+        traits.attr('data-animate', response.data[index].images.fixed_width.url);
+        
         var names =`<div>${response.data[index].title}</div>`;
         console.log(names);
         var ratings= `<div>${response.data[index].rating}</div>`;
@@ -78,4 +80,4 @@ var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Tenderhear
 // };
 });
 });
-});      
+      
