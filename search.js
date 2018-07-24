@@ -20,9 +20,10 @@ var topics= ["Cheer Bear","Grumpy Bear","Share Bear","Funshine Bear","Tenderhear
         traits.attr('src', response.data[index].images.fixed_width_still.url);
         var names =`<div>${response.data[index].title}</div>`;
         console.log(names);
-        var ratings= response.data[index].rating;
+        var ratings= `<div>${response.data[index].rating}</div>`;
          newbutton.click(function(){
-          $("#friends").prepend(traits, names, ratings);  
+          $("#friends").prepend(traits, names, ratings); 
+         
          });
          $(".Aroo").append(newbutton);
 //          $(".Aroo").append(`
